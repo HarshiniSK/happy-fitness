@@ -35,7 +35,7 @@
           <v-carousel-item v-for="(quote, i) in quotes" :key="i">
             <v-sheet class="white black--text" height="100%">
               <v-row class="fill-height" align="center">
-                <v-container>
+                <v-container class="ma-2">
                   <v-row wrap>
                     <v-col class="quote" cols="12">{{quote}}</v-col>
                   </v-row>
