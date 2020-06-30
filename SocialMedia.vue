@@ -4,7 +4,7 @@
       <v-container>
         <v-row>
           <v-col cols="12">
-            <h3>Catch us in social media:</h3>
+            <h3>Catch us on social media:</h3>
           </v-col>
           <v-col cols="4" sm="1" v-for="social in socials" :key="social">
             <v-btn x-large icon color="green">
@@ -32,5 +32,7 @@ export default {
 </script>
 
 <style scoped>
-
+*{
+  font-family: "Raleway", sans-serif;
+}
 </style>

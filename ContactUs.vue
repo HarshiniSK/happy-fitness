@@ -1,5 +1,5 @@
 <template>
-  <v-form id="fbform" v-model="valid">
+  <v-form id="fbform" ref="form" v-model="valid">
     <v-container>
       <v-row>
         <v-col cols="12" md="12">
@@ -14,7 +14,7 @@
           </template>
 
           <v-card>
-            <v-card-title class="headline success" primary-title>Thankyou for your feedBack</v-card-title>
+            <v-card-title class="success" primary-title>Thank you for your feedback</v-card-title>
 
             <v-card-text class="ma-3">{{feedback}}</v-card-text>
 
@@ -27,16 +27,23 @@
           </v-card>
         </v-dialog>
       </div>
-
-      <!--v-btn class="success" @click="submitFeedBack">Submit</v-btn-->
+      <SocialMedia/>
     </v-container>
   </v-form>
 </template>
 
 <script>
+import SocialMedia from "./SocialMedia.vue";
+//import firebase from 'firebase';
+import {db} from './firebaseInit';
+
 export default {
+  name: "ContactUs",
+  components: {
+    SocialMedia
+  },
   data: () => ({
-    dialog : false,
+    dialog: false,
     valid: false,
     feedback: "",
     feedbackrules: [v => !!v || "FeedBack is required"]
@@ -44,24 +51,32 @@ export default {
   methods: {
     submitFeedBack() {
       if (this.feedback != "") {
-        console.log(this.feedback);
-        //document.getElementById("fbform").reset();
-        //window.location.reload();
-        console.log("Submitted Successfuly");
+        db.collection('feedback').add({
+          content : this.feedback
+        }).then(()=>{
+          //console.log(this.feedback);
+          //document.getElementById("fbform").reset();
+          //window.location.reload();
+          //console.log("Submitted Successfuly");
+        })
+        
       } else {
         console.log("Empty FeedBack");
       }
     },
-    resetForm(){
-        this.dialog=false;
-        window.location.reload();
-        console.log('Refreshed');
-        console.log('Second Time'+this.feedback);
-
+    resetForm() {
+      this.dialog = false;
+      //window.location.reload();
+      //console.log("Refreshed");
+      //console.log("Second Time" + this.feedback);
+      this.$refs.form.reset();
     }
   }
 };
 </script>
 
 <style scoped>
+* {
+  font-family: "Raleway", sans-serif;
+}
 </style>

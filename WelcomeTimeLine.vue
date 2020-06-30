@@ -13,6 +13,7 @@
 <script>
 export default {
   name: "WelcomeTimeLine",
+
   data : () =>({
     details:[
       {caption:'Fitness Comes with Happiness', content:'You are only one workout away from a good mood' },
@@ -20,6 +21,7 @@ export default {
       {caption:'Fitness is for everyone, everywhere', content:'Wanna gain weight/ loose weigt/ build muscle/ stay fit....then you are at the right place' },
     ]
   }),
+
 };
 </script>
 

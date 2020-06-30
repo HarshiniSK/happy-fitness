@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <v-container>
       <v-row wrap>
         <v-col class="md-4" v-for="dr in drdetails" :key="dr.id">
@@ -27,7 +27,6 @@
         </v-col>
       </v-row>
     </v-container>
-  </div>
 </template>
 
 <script>
