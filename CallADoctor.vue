@@ -1,33 +1,28 @@
 <template>
-  <div>
-    <v-container>
-      <v-row wrap>
-        <v-col class="md-4" v-for="dr in drdetails" :key="dr.id">
-          <v-card class="success mx-auto" max-width="344">
-            <v-img :src="dr.src" height="194"></v-img>
-            <v-list-item>
-              <v-list-item-content class="white--text">
-                <v-list-item-title class="headline">{{dr.name}}</v-list-item-title>
-                <v-list-item-subtitle class="white--text">{{dr.info}}</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-            <v-card-text></v-card-text>
-            <v-card-actions>
-              <v-btn text color="white">Contact</v-btn>
-              <v-btn text color="white">Know More</v-btn>
-              <v-spacer></v-spacer>
-              <v-btn icon>
-                <v-icon color="white">mdi-heart</v-icon>
-              </v-btn>
-              <v-btn icon>
-                <v-icon color="white">mdi-share-variant</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+  <v-container>
+    <v-row wrap>
+      <v-col class="md-4" v-for="dr in drdetails" :key="dr.id">
+        <v-card class="success mx-auto" max-width="344">
+          <v-img :src="dr.src" height="194"></v-img>
+          <v-list-item>
+            <v-list-item-content class="white--text">
+              <v-list-item-title class="headline">{{dr.name}}</v-list-item-title>
+              <v-list-item-subtitle class="white--text">{{dr.info}}</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+          <v-card-text></v-card-text>
+          <v-card-actions>
+            <v-btn text color="white">Contact</v-btn>
+            <v-btn text color="white">Know More</v-btn>
+            <v-spacer></v-spacer>
+            <v-btn icon>
+              <v-icon color="white">mdi-heart</v-icon>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
