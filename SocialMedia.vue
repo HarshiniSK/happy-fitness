@@ -1,18 +1,23 @@
 <template>
   <v-card flat>
     <v-card-text>
-      <v-container>
         <v-row>
           <v-col cols="12">
-            <h3>Catch us in social media:</h3>
+            <h3>Catch us on social media:</h3>
           </v-col>
-          <v-col cols="4" sm="1" v-for="social in socials" :key="social">
+          </v-row>
+          <v-row>
+          <v-col cols="1" v-for="social in socials" :key="social" class="hidden-sm-and-down">
+            <v-btn x-large icon color="green">
+              <v-icon>{{social}}</v-icon>
+            </v-btn>
+          </v-col>
+          <v-col v-for="(social,i) in socials" :key="i" class="hidden-md-and-up">
             <v-btn x-large icon color="green">
               <v-icon>{{social}}</v-icon>
             </v-btn>
           </v-col>
         </v-row>
-      </v-container>
     </v-card-text>
   </v-card>
 </template>
@@ -32,5 +37,7 @@ export default {
 </script>
 
 <style scoped>
-
+*{
+  font-family: "Raleway", sans-serif;
+}
 </style>
